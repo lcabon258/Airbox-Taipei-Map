@@ -41,6 +41,6 @@ gmt psconvert $ps -E400 -Tj -A0.5i -V
 #===== remove files =====
 rm $taipei.int
 rm ./*.tmp
-#./AirBoxData
+rm ./AirBoxData
 rm ./AirBoxDevice
 rm ./gmt.*
