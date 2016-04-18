@@ -1,0 +1,10 @@
+./dem/aster_taipei.nc: Title: Produced by grdcut
+./dem/aster_taipei.nc: Command: grdcut ../RasterFiles/tw30m_aster.nc -R121.43485/121.684087/24.957789/25.159322 -G./taipei.nc -V
+./dem/aster_taipei.nc: Remark: 
+./dem/aster_taipei.nc: Gridline node registration used [Geographic grid]
+./dem/aster_taipei.nc: Grid file format: nf = GMT netCDF format (32-bit float), COARDS, CF-1.5
+./dem/aster_taipei.nc: x_min: 121.434722222 x_max: 121.684166667 x_inc: 0.000277777777778 name: longitude [degrees_east] nx: 899
+./dem/aster_taipei.nc: y_min: 24.9577777778 y_max: 25.1594444444 y_inc: 0.000277777777778 name: latitude [degrees_north] ny: 727
+./dem/aster_taipei.nc: z_min: 4 z_max: 837 name: GDAL Band Number 1
+./dem/aster_taipei.nc: scale_factor: 1 add_offset: 0
+./dem/aster_taipei.nc: format: netCDF-4 chunk_size: 129,146 shuffle: on deflation_level: 3
