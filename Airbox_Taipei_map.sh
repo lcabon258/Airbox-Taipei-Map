@@ -23,8 +23,10 @@ echo "----------------------------------"
 gmt grdgradient $taipei -Ne0.7 -A250/330 -G$taipei.int
 #===== construct basemap =====
 gmt psbasemap -R$range -JM17c -Bxa0.05f0.01 -Bya0.05f0.01 -BNESW+t"PM2.5 map of Taipei $timestamp" -Tdx15c/11.7c+w3.5c+f2+l" "," "," ",n -UBL/0c/-1.5c/"PM2.5 : Airbox Taipei open data ; DEM : ASTER GDEM v2 ; code : lcabon258 @@github" -X2c -Y10c -K -P -V > $ps
+#===== pre-process : using block-mean =====
+awk '{print $1,$2,$3}' $pm25data | gmt blockmean -R$taipei -I2k > pm25.2km.tmp
 #===== surface : convert xyz data to grd file =====
-awk '{print $1,$2,$3}' $pm25data | gmt surface -R$taipei -Gpm25now.nc.tmp -V
+gmt surface pm25.2km.tmp -R$taipei -Gpm25now.nc.tmp -V
 #===== Draw the color on the map =====
 gmt grdimage pm25now.nc.tmp -R$range -JM -I$taipei.int -Cpm25.cpt -O -K -P -V >> $ps
 #===== Plot position of sensor ===== 
